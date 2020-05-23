@@ -9,10 +9,9 @@
 
 <script>
 export default {
+  name: "Icon",
   props: {
-    name: {
-      type: String,
-    },
+    name: String,
     width: {
       type: [Number, String],
       default: 24,

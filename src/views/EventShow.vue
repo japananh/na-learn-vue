@@ -6,10 +6,14 @@
       <h5>Organized by {{ event.organizer }}</h5>
       <h5>Category: {{ event.category }}</h5>
     </div>
+
     <BaseIcon name="map"><h2>Location</h2></BaseIcon>
+
     <address>{{ event.location }}</address>
+
     <h2>Event details</h2>
     <p>{{ event.description }}</p>
+
     <h2>
       Attendees
       <span class="badge -fill-gradient">{{

@@ -2,9 +2,12 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import BaseIcon from "@/components/BaseIcon";
 
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
+
+Vue.component("BaseIcon", BaseIcon);
 
 const requireComponent = require.context(
   // The relative path of the components folder

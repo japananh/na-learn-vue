@@ -11,6 +11,15 @@ const routes = [
     component: EventList,
   },
   {
+    path: "/event/create",
+    name: "event-create",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "event-create" */ "@/views/EventCreate.vue"),
+  },
+  {
     path: "/event/:id",
     name: "event-show",
     // route level code-splitting
@@ -19,15 +28,6 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "event-show" */ "@/views/EventShow.vue"),
     props: true,
-  },
-  {
-    path: "/event/create",
-    name: "event-create",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "event-create" */ "@/views/EventCreate.vue"),
   },
 ];
 
