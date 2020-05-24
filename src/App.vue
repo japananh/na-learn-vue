@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Navbar />
+    <NotificationContainer />
     <!-- Reload page when the url changes -->
     <router-view :key="$route.fullPath" />
   </div>
@@ -8,10 +9,11 @@
 
 <script>
 import Navbar from "@/components/Navbar.vue";
-
+import NotificationContainer from "@/components/NotificationContainer.vue";
 export default {
   components: {
     Navbar,
+    NotificationContainer,
   },
 };
 </script>

@@ -78,9 +78,7 @@ export default {
           });
           this.events = this.createFreshEventObject();
         })
-        .catch(error => {
-          console.log("create error", error);
-        });
+        .catch(() => {});
     },
     createFreshEventObject() {
       // user.user = module-name.state
