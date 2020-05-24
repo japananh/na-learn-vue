@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <Navbar />
-    <router-view />
+    <!-- Reload page when the url changes -->
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
