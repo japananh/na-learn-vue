@@ -64,26 +64,27 @@ export default {
       times,
       // Work as well as mapState
       // categories: this.$$store.state.categories,
-      event: this.createFreshEventObjecct(),
+      event: this.createFreshEventObject(),
     };
   },
   methods: {
     createEvent() {
       this.$store
-        .dispatch("createEvent", this.event)
+        .dispatch("event/createEvent", this.event)
         .then(() => {
           this.$router.push({
             name: "event-show",
             params: { id: this.event.id },
           });
-          this.events = this.createFreshEventObjecct();
+          this.events = this.createFreshEventObject();
         })
         .catch(error => {
           console.log("create error", error);
         });
     },
-    createFreshEventObjecct() {
-      const user = this.$store.state.user;
+    createFreshEventObject() {
+      // user.user = module-name.state
+      const user = this.$store.state.user.user;
       const id = Math.floor(Math.random() * 1000000);
       return {
         id,
@@ -100,7 +101,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(["events", "categories"]),
+    ...mapState(["event.events", "categories"]),
   },
   components: {
     Datepicker,
