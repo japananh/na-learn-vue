@@ -62,6 +62,7 @@ export const actions = {
     if (event) {
       commit("SET_EVENT", event);
     } else {
+      // Need to return a promise so then() will work
       return EventService.getEvent(id)
         .then(response => {
           commit("SET_EVENT", response.data);
