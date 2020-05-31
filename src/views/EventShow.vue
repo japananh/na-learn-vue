@@ -33,18 +33,23 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState } from "vuex";
+import NProgress from "nprogress";
+import store from "@/store";
 
 export default {
   props: ["id"],
-  created() {
-    this.$store.dispatch("event/fetchEvent", this.id);
+  // Solutuion 2: Use progress bar in beforeRouteEnter
+  beforeRouteEnter(routeTo, routeFrom, next) {
+    NProgress.start();
+    store.dispatch("event/fetchEvent", routeTo.params.id).then(() => {
+      NProgress.done();
+      next();
+    });
   },
   computed: mapState({
     event: state => state.event.event,
   }),
-  // "event", ["fetchEvent"] : namespace - actions to map
-  methods: mapActions("event", ["fetchEvent"]),
 };
 </script>
 
