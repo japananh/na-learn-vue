@@ -32,7 +32,13 @@ const routes = [
     props: true,
     // Solution 3: Global and Per-Route Guards
     beforeEnter(routeTo, routeFrom, next) {
-      store.dispatch("event/fetchEvent", routeTo.params.id).then(() => {
+      store.dispatch("event/fetchEvent", routeTo.params.id).then(event => {
+        /*
+         * Get "event" from "return" at event.js
+         * Set event as a prop of event-show
+         * Make it easy to test because we only need to debug api call here
+         */
+        routeTo.params.event = event;
         next();
       });
     },

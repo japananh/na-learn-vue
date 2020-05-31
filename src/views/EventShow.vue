@@ -33,12 +33,18 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+// import { mapState } from "vuex";
 // import NProgress from "nprogress";
 // import store from "@/store";
 
 export default {
-  props: ["id"],
+  // props: ["id"],
+  props: {
+    event: {
+      type: Object,
+      required: true,
+    },
+  },
   // Solutuion 2: Use progress bar in beforeRouteEnter
   // beforeRouteEnter(routeTo, routeFrom, next) {
   //   NProgress.start();
@@ -47,9 +53,9 @@ export default {
   //     next();
   //   });
   // },
-  computed: mapState({
-    event: state => state.event.event,
-  }),
+  // computed: mapState({
+  //   event: state => state.event.event,
+  // }),
 };
 </script>
 
