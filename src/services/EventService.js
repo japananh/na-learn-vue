@@ -8,6 +8,8 @@ const apiClient = axios.create({
     Accept: "application/json",
     "Content-Type": "application/json",
   },
+  // Throw error if an API call taks longer than 10 seconds
+  timeout: 10000,
 });
 
 // Solution 1: use progress bar in interceptor
