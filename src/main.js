@@ -14,6 +14,15 @@ Vue.component("BaseIcon", BaseIcon);
 // Allow all components use vuelidate
 Vue.use(Vuelidate);
 
+/* Global mixin runs in every components
+ * Use it with caution
+ */
+// Vue.mixin({
+//   mounted() {
+//     console.log("Nana uses mixin.");
+//   },
+// });
+
 const requireComponent = require.context(
   // The relative path of the components folder
   "./components",
