@@ -169,21 +169,21 @@
       ]
     },
     {
-      "id": 96473,
+      "id": 193700,
       "user": {
         "id": "abc123",
         "name": "Adam Jahr"
       },
-      "category": "",
+      "category": "education",
       "organizer": {
         "id": "abc123",
         "name": "Adam Jahr"
       },
-      "title": "",
-      "description": "",
-      "location": "",
-      "date": "",
-      "time": "",
+      "title": "sdfsdaa",
+      "description": "dsad",
+      "location": "sada",
+      "date": "2020-06-02T14:07:00.000Z",
+      "time": "15:00",
       "attendees": []
     }
   ]

@@ -9,6 +9,11 @@ import Vuelidate from "vuelidate";
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
 
+import DateFilter from "@/filters/date";
+
+// Use global filter
+Vue.filter("date", DateFilter);
+
 Vue.component("BaseIcon", BaseIcon);
 
 // Allow all components use vuelidate

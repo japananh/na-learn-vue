@@ -146,7 +146,6 @@ export default {
       this.$v.$touch();
 
       if (!this.$v.$invalid) {
-        console.log("createEvent -> !this.$v.$invalid", this.$v.$invalid);
         NProgress.start();
 
         // Another solution to dispatch action in component
